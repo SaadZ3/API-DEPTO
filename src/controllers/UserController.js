@@ -5,7 +5,9 @@ class UserController {
     try {
       const novoUser = await User.create(req.body);
       const { id, nome, email } = novoUser; // Desestruturando os campos que queremos retornar
-      return res.json({ id, nome, email });
+      return res.json({
+        id, nome, email, role,
+      });
     } catch (e) {
       return res.status(400).json({
         errors: e.errors.map((err) => err.message),
@@ -17,7 +19,7 @@ class UserController {
   async index(req, res) {
     try {
       // Busca todos os usuários, mas foi filtrado apenas os campos id, nome e email
-      const users = await User.findAll({ attributes: ['id', 'nome', 'email'] });
+      const users = await User.findAll({ attributes: ['id', 'nome', 'email', 'role'] });
       return res.json(users);
     } catch (e) {
       return res.json(null);
@@ -29,8 +31,12 @@ class UserController {
     try {
       const user = await User.findByPk(req.params.id);
 
-      const { id, nome, email } = user;
-      return res.json({ id, nome, email });
+      const {
+        id, nome, email, role,
+      } = user;
+      return res.json({
+        id, nome, email, role,
+      });
     } catch (e) {
       return res.json(null);
     }
@@ -48,9 +54,13 @@ class UserController {
       }
 
       const novosDados = await user.update(req.body);
-      const { id, nome, email } = novosDados; // Desestruturando os campos que queremos retornar
+      const {
+        id, nome, email, role,
+      } = novosDados; // Desestruturando os campos que queremos retornar
 
-      return res.json({ id, nome, email });
+      return res.json({
+        id, nome, email, role,
+      });
     } catch (e) {
       return res.status(400).json({
         errors: e.errors.map((err) => err.message),

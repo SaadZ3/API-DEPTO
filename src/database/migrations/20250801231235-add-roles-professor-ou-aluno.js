@@ -1,10 +1,11 @@
+/** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
     // editando a coluna email da tabela 'alunos' para ser unique
-    await queryInterface.changeColumn('alunos', 'email', {
-      type: Sequelize.STRING,
+    await queryInterface.addColumn('users', 'role', {
+      type: Sequelize.ENUM('aluno', 'professor'),
       allowNull: false,
-      unique: true,
+      defaultValue: 'aluno',
     });
   },
 

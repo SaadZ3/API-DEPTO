@@ -16,7 +16,7 @@ import alunoRoutes from './routes/AlunoRoutes';
 import fotoRoutes from './routes/fotoRoutes';
 
 const whiteList = [
-  'https://react-api-ten-coral.vercel.app',
+  'https://????????????????????',
   'http://localhost:3000',
 ];
 
