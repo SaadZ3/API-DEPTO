@@ -4,7 +4,9 @@ class UserController {
   async store(req, res) {
     try {
       const novoUser = await User.create(req.body);
-      const { id, nome, email } = novoUser; // Desestruturando os campos que queremos retornar
+      const {
+        id, nome, email, role,
+      } = novoUser; // Desestruturando os campos que queremos retornar
       return res.json({
         id, nome, email, role,
       });
