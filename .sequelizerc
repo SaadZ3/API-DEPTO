@@ -1,0 +1,10 @@
+// sequelizerc é um arquivo de configuração para o Sequelize, um ORM (Object-Relational Mapping) para Node.js.
+// Ele é usado para definir caminhos para os modelos, migrações e seeds do banco de dados, facilitando a organização do projeto.
+const { resolve } = require('path');
+
+module.exports = {
+  config: resolve(__dirname, 'src', 'config', 'database.js'),
+  'models-path': resolve(__dirname, 'src', 'models'), // models são as representações das tabelas do banco de dados
+  'migrations-path': resolve(__dirname, 'src', 'database', 'migrations'), // migrations são alterações no banco de dados
+  'seeders-path': resolve(__dirname, 'src', 'database', 'seeds'), // seeds são dados iniciais que serão inseridos no banco de dados
+}
