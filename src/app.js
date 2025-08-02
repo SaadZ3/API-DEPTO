@@ -39,7 +39,7 @@ class App {
 
   middlewares() {
     this.app.use(cors(corsOptions));
-    this.app.use(delay(1500)); // Adiciona um delay de 1 segundo em todas as requisições
+    this.app.use(delay(200)); // Adiciona um delay de 1 segundo em todas as requisições
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(express.json());
     this.app.use('/images/', express.static(resolve(__dirname, '..', 'uploads', 'images'))); // Serve arquivos estáticos da pasta uploads

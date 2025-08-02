@@ -16,13 +16,14 @@ export default async (req, res, next) => {
 
   try {
     const dados = jwt.verify(token, process.env.TOKEN_SECRET);
-    const { id, email } = dados;
+    const { id, email, role } = dados;
 
     // verifica se o usuário ainda existe no banco de dados
     const user = await User.findOne({
       where: {
         id,
         email,
+        role,
       },
     });
     if (!user) {
@@ -34,6 +35,7 @@ export default async (req, res, next) => {
     // adiciona o id e o email do usuário na requisição
     req.userId = id;
     req.userEmail = email;
+    req.userRole = role;
 
     return next();
   } catch (e) { // se chegou no catch, o token é inválido ou expirou
