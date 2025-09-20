@@ -71,5 +71,6 @@ export default class Departamento extends Model {
     }, {
       sequelize,
     });
+    return this;
   }
 }
