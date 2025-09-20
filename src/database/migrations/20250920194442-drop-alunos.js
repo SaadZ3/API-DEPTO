@@ -1,7 +1,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface) {
-    await queryInterface.dropTable('alunos');
+    await queryInterface.dropTable('fotos');
   },
 
   // eslint-disable-next-line no-empty-function
