@@ -48,7 +48,7 @@ export default class Departamento extends Model {
           },
         },
       },
-      funcionarios: {
+      fucnionarios: {
         type: Sequelize.STRING,
         defaultValue: '',
         validate: {
