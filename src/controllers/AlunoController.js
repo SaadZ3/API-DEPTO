@@ -28,7 +28,7 @@ class AlunoController {
 
   async show(req, res) {
     try {
-      const { id } = req.params; // id do aluno a ser buscado
+      const { id } = req.params; // id do aluno aa ser buscado
 
       if (!id) {
         return res.status(400).json({
