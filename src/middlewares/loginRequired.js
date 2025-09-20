@@ -23,7 +23,6 @@ export default async (req, res, next) => {
       where: {
         id,
         email,
-        // role,
       },
     });
     if (!user) {
@@ -35,7 +34,6 @@ export default async (req, res, next) => {
     // adiciona o id e o email do usuário na requisição
     req.userId = id;
     req.userEmail = email;
-    // req.userRole = role;
 
     return next();
   } catch (e) { // se chegou no catch, o token é inválido ou expirou

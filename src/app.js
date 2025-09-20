@@ -14,6 +14,7 @@ import userRoutes from './routes/UserRoutes';
 import tokenRoutes from './routes/tokenRoutes';
 import alunoRoutes from './routes/AlunoRoutes';
 import fotoRoutes from './routes/fotoRoutes';
+import deptoRoutes from './routes/DepartamentoRoutes';
 
 const whiteList = [
   'https://react-api-depto.vercel.app', // aqui vem a url do vercel com react
@@ -51,6 +52,7 @@ class App {
     this.app.use('/tokens/', tokenRoutes);
     this.app.use('/alunos/', alunoRoutes);
     this.app.use('/fotos/', fotoRoutes);
+    this.app.use('/departamentos/', deptoRoutes);
   }
 }
 // exportando a classe

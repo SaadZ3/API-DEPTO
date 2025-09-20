@@ -44,17 +44,6 @@ export default class User extends Model {
           },
         },
       },
-      role: {
-        type: Sequelize.ENUM('aluno', 'professor'), // define os papéis possíveis
-        allowNull: false,
-        defaultValue: 'aluno',
-        validate: {
-          isIn: {
-            args: [['aluno', 'professor']],
-            msg: 'O tipo de usuário deve ser "aluno" ou "professor".',
-          },
-        },
-      },
     }, {
       sequelize, // passando a instância do sequelize
     });
