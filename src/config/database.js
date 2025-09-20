@@ -1,21 +1,3 @@
-// database é a configuração do banco de dados para o Sequelize
-// require('dotenv').config();
-
-// module.exports = {
-//   /* SQLite */
-//   dialect: 'sqlite',
-//   storage: './db.sqlite',
-
-//   /* ALL */
-//   define: {
-//     timestamps: true,
-//     underscored: true,
-//     underscoredAll: true,
-//     createdAt: 'created_at',
-//     updatedAt: 'updated_at',
-//   },
-// };
-
 require('dotenv').config();
 
 module.exports = {
