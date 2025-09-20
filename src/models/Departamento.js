@@ -13,7 +13,7 @@ export default class Departamento extends Model {
           },
         },
       },
-      TextoPrincipal: {
+      texto_principal: {
         type: Sequelize.STRING,
         defaultValue: '',
         validate: {
@@ -48,7 +48,7 @@ export default class Departamento extends Model {
           },
         },
       },
-      fucnionarios: {
+      funcionarios: {
         type: Sequelize.STRING,
         defaultValue: '',
         validate: {

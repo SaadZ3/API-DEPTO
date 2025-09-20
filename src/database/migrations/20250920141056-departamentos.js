@@ -12,7 +12,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      TextoPrincipal: {
+      texto_principal: {
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -26,7 +26,7 @@ module.exports = {
         allowNull: true,
         unique: true,
       },
-      fucnionarios: {
+      funcionarios: {
         type: Sequelize.STRING,
         allowNull: true,
       },
