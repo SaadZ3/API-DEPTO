@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-import { resolve } from 'path';
+// import { resolve } from 'path';
 
 dotenv.config();
 
@@ -12,8 +12,8 @@ import delay from 'express-delay'; // Importa o middleware de delay para simular
 import homeRoutes from './routes/HomeRoutes';
 import userRoutes from './routes/UserRoutes';
 import tokenRoutes from './routes/tokenRoutes';
-import alunoRoutes from './routes/AlunoRoutes';
-import fotoRoutes from './routes/fotoRoutes';
+// import alunoRoutes from './routes/AlunoRoutes';
+// import fotoRoutes from './routes/fotoRoutes';
 import deptoRoutes from './routes/DepartamentoRoutes';
 
 const whiteList = [
@@ -43,15 +43,16 @@ class App {
     this.app.use(delay(200)); // Adiciona um delay de 1 segundo em todas as requisições
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(express.json());
-    this.app.use('/images/', express.static(resolve(__dirname, '..', 'uploads', 'images'))); // Serve arquivos estáticos da pasta uploads
+    // eslint-disable-next-line max-len
+    // this.app.use('/images/', express.static(resolve(__dirname, '..', 'uploads', 'images'))); // Serve arquivos estáticos da pasta uploads
   }
 
   routes() {
     this.app.use('/', homeRoutes);
     this.app.use('/users/', userRoutes);
     this.app.use('/tokens/', tokenRoutes);
-    this.app.use('/alunos/', alunoRoutes);
-    this.app.use('/fotos/', fotoRoutes);
+    // this.app.use('/alunos/', alunoRoutes);
+    // this.app.use('/fotos/', fotoRoutes);
     this.app.use('/departamentos/', deptoRoutes);
   }
 }
