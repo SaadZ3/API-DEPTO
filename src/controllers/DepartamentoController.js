@@ -4,7 +4,7 @@ class DepartamentoController {
   async index(req, res) {
     const deptos = await Departamento.findAll({
       attributes: ['id', 'titulo', 'texto_principal', 'ramal', 'email', 'funcionarios', 'andar'],
-      order: ['id', 'DESC'], // ordenando por id de forma decrescente
+      order: [['id', 'DESC']], // ordenando por id de forma decrescente
     });
     res.json(deptos);
   }
@@ -35,7 +35,7 @@ class DepartamentoController {
 
       const depto = await Departamento.findByPk(id, {
         attributes: ['id', 'titulo', 'texto_principal', 'ramal', 'email', 'funcionarios', 'andar'],
-        order: ['id', 'DESC'], // ordenando por id de forma decrescente
+        order: [['id', 'DESC']], // ordenando por id de forma decrescente
       });
 
       if (!depto) {
