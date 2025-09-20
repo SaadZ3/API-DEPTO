@@ -53,7 +53,7 @@ export default class Departamento extends Model {
         defaultValue: '',
         validate: {
           len: {
-            args: [3, 655],
+            args: [0, 655],
             msg: 'O campo funcionarios ultapassou o limite.',
           },
         },
