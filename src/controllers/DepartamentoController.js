@@ -2,7 +2,13 @@ import Departamento from '../models/Departamento';
 
 class DepartamentoController {
   async index(req, res) {
+    const { andar } = req.query; // o query é usado para pegar filtros da url
+    const where = {}; // Cria um objeto de busca vazio
+    if (andar) {
+      where.andar = andar; // Se o parâmetro 'andar' existir, adiciona ao filtro
+    }
     const deptos = await Departamento.findAll({
+      where,
       attributes: ['id', 'titulo', 'texto_principal', 'ramal', 'email', 'funcionarios', 'andar', 'complemento'],
       order: [['id', 'DESC']], // ordenando por id de forma decrescente
     });
