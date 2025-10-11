@@ -59,17 +59,29 @@ export default class Departamento extends Model {
         },
       },
       andar: {
+        type: Sequelize.ENUM(
+          '1º Sub-solo',
+          'Térreo',
+          '1º Andar',
+          '2º Andar',
+          '3º Andar',
+          '4º Andar',
+          '5º Andar',
+          '6º Andar',
+          '7º Andar',
+          '8º Andar',
+          '9º Andar',
+          '10º Andar',
+        ),
+        defaultValue: 'Térreo',
+      },
+      complemento: {
         type: Sequelize.STRING,
         defaultValue: '',
-        validate: {
-          len: {
-            args: [1, 255],
-            msg: 'O andar precisa ter entre 1 e 255 caracteres.',
-          },
-        },
       },
     }, {
       sequelize,
+      tableName: 'departamentos',
     });
     return this;
   }
