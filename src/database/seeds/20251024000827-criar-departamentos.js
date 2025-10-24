@@ -96,7 +96,7 @@ module.exports = {
 
         departamentos.push({
           titulo,
-          texto_principal: `Texto principal sobre o departamento de ${titulo}.`,
+          texto_principal: titulo,
           ramal, //
           email, //
           funcionarios: 'Alice Silva, Bruno Costa, Carla Dias',
